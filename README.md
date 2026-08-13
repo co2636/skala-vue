@@ -1,8 +1,6 @@
 # skala-vue ⛅️ 오늘의 날씨
 
-**SK AX Full-Stack Engineering — Frontend Framework: Vue.js** 과정 실습 저장소입니다.
-
-전국 8개 도시의 실시간 날씨를 조회하는 대시보드로, 1장부터 챕터별 학습 내용을 하나의 프로젝트에 누적하여 구축했습니다.
+**SKALA — Vue.js** 과정 실습 저장소입니다.
 
 🔗 **배포 주소**: <https://skala-vue-omega.vercel.app/>
 
