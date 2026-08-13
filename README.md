@@ -6,7 +6,7 @@
 
 🔗 **배포 주소**: <https://skala-vue-omega.vercel.app/>
 
-- **기간**: 2026.8
+- **기간**: 2026.8.10 ~ 2026.8.13
 - **기술 스택**: Vue 3 (Composition API), Vue Router, Pinia, Axios, Element Plus, Vite
 - **외부 API**: OpenWeatherMap, Open-Meteo
 
