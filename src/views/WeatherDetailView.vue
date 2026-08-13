@@ -12,7 +12,11 @@ const router = useRouter()
 
 const cityDetail = ref(null)
 
-onMounted(() => {
+onMounted(async () => {
+  if (weatherStore.weatherList.length === 0) {
+    await weatherStore.fetchWeather()
+  }
+
   const cityId = route.params.cityId
   cityDetail.value = weatherStore.getCityById(cityId)
 
@@ -26,14 +30,14 @@ const goHome = () => {
 }
 
 const displayTemp = computed(() => {
-  if (!cityDetail.value) return 0
+  const rawTemp = cityDetail.value?.temp ?? 0
 
-  const rawTemp = cityDetail.value.temp
   if (configStore.unit === 'fahrenheit') {
     return Math.round((rawTemp * 9) / 5 + 32)
   }
   return rawTemp
 })
+
 const totalRain = computed(() => {
   let sum = 0
   for (const item of weatherStore.forecastList) {
@@ -74,6 +78,10 @@ const totalRain = computed(() => {
 
         <p class="forecast-note">총 강수량 {{ totalRain }}mm 예상</p>
       </div>
+
+      <p v-else-if="weatherStore.forecastError" class="forecast-error">
+        {{ weatherStore.forecastError }}
+      </p>
 
       <button class="btn-back" @click="goHome">← 대시보드로 돌아가기</button>
     </div>
@@ -192,5 +200,14 @@ const totalRain = computed(() => {
   font-size: 13px;
   color: #64748b;
   text-align: center;
+}
+.forecast-error {
+  margin-top: 24px;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #94a3b8;
+  background-color: #f8fafc;
+  border-radius: 8px;
 }
 </style>
