@@ -1,0 +1,59 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+.DS_Store
+dist
+dist-ssr
+coverage
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+*.tsbuildinfo
+
+.eslintcache
+
+# Cypress
+/cypress/videos/
+/cypress/screenshots/
+
+# Vitest
+__screenshots__/
+
+# Vite
+*.timestamp-*-*.mjs
+
+# 환경 변수
+.env
+.env.*
+!.env.example
+
+# 제출 제외 — Code Challenge 실습 및 중간 산출물
+src/components/practices/
+src/stores/counter.js
+src/components/exercise/WeatherMockup.vue
+src/components/exercise/WeatherComposition.vue
+src/components/exercise/WeatherParent.vue
+
+# 제출 제외 — Vite 샘플
+src/components/HelloWorld.vue
+src/components/TheWelcome.vue
+src/components/WelcomeItem.vue
+src/components/icons/
+src/views/HomeView.vue
+src/views/AboutView.vue
